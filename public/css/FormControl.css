@@ -1,0 +1,275 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+    background-color:#FBFCFC;
+    border-radius:5px;
+}
+
+::-webkit-scrollbar{
+    width:5px;
+    cursor:pointer;
+}
+::-webkit-scrollbar-track
+{
+    width:5px;
+    background-color:#EBEDEF;
+    border-radius:5px;
+    cursor:pointer;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color:#D5D8DC;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background-color:#D5D8DC;
+}
+
+/* For small screens  */
+@media  screen and (max-width:699px) 
+{
+    #Forms
+    {
+        display:grid;
+        grid-template-rows: auto auto;
+        width:100%;
+        height:100vh;
+        padding:0px 0px 40px 0px;
+    }
+    #ControlForm, .CreatedForms
+    {
+        width:-webkit-fill-available;
+        height:auto;
+    }
+}
+
+/* For large screens  */
+@media  screen and (min-width:700px) 
+{
+    #Forms
+    {    
+        grid-template-columns: auto auto;
+        width:100%;
+        height:90vh;
+        transform:scale(0.95);
+        padding:40px;
+    }
+    #ControlForm,.CreatedForms
+    {
+        width:250px;
+        height:auto;
+    }
+}
+
+h1
+{
+    position:relative;
+    font-weight:400;
+    text-align:center;
+    padding:20px;
+}
+#Forms
+{
+    display:grid;
+    position:relative;
+    margin:auto;
+    transition:0.3s ease;
+    background-color:white;
+    overflow-y:auto;
+    box-shadow:0px 1px 10px 0px #eaecee;
+}
+#ControlForm , .CreatedForms form
+{
+    display:block;
+    position:relative;
+    padding:15px 30px;
+    font-size:10px;
+    margin:auto;
+    color:black;
+    width:90%;
+    max-width:400px;
+    letter-spacing:0.4px;
+    transition:0.3s ease;
+}
+#ControlForm input, 
+#ControlForm select,
+.CreatedForms  form input,
+.CreatedForms  form select
+{
+    display:block;
+    position:relative;
+    outline:none;
+    border:2px solid #D5D8DC;
+    padding:3px 10px;
+    font-size: 10px;
+    transition:0.3s ease;
+    background-color: white;
+    width:-webkit-fill-available;
+    cursor:pointer;
+}
+#ControlForm input[type=button],
+.CreatedForms  form input[type=button] 
+{
+    display:block;
+    position:realtive;
+    margin:2px 0px;
+    border:2px solid transparent;
+    background-color:#3498DB;
+    color:white;
+    transition:0.3s ease;
+}
+#ControlForm input[type=button]:hover, 
+#ControlForm input[type=button]:focus,
+.CreatedForms  form input[type=button]:hover, 
+.CreatedForms  form input[type=button]:focus  
+{
+    background-color:#2E86C1;
+    border:2px solid black;
+}
+
+#ControlForm label,
+.CreatedForms  form label
+{
+    display:inline-block;
+    padding:5px 8px;
+    user-select:none;
+    margin:5px 0px 1px 0px;
+    font-weight:500;
+    transition:0.3s ease;
+} 
+
+#ControlForm input:hover, 
+#ControlForm select:hover, 
+#ControlForm input:focus, 
+#ControlForm select:focus, 
+.CreatedForms  form input:hover, 
+.CreatedForms  form select:hover, 
+.CreatedForms  form input:focus, 
+.CreatedForms  form select:focus 
+{
+    border-color:#8E44AD;
+} 
+
+#ControlForm input:valid,
+#ControlForm select:valid,
+.CreatedForms  form input:valid, 
+.CreatedForms  form select:valid
+{
+    border-color:#27AE60;
+}
+#ControlForm input:invalid, #ControlForm select:invalid
+{
+    border-color:#D35400;
+}
+
+#ControlForm input[name=ErrorMessage]
+{
+    color:#D35400;
+    font-weight:500;
+    letter-spacing: 0.3px;
+}
+#ControlForm label[for=ErrorMessage]
+{
+    background-color:#FADBD8;
+}
+
+.StatusReport 
+{
+    display:none;
+    position:relative;
+    padding:8px 12px;
+    margin:5px auto;
+    font-weight: 500;
+    text-align:center;
+    transition:0.3s ease;
+    user-select:none;
+}
+.SuccessReport 
+{
+    background-color: #2ECC71;
+}
+.FailureReport
+{
+    background-color:#CB4335;
+}
+
+#FieldsAdded 
+{
+    display:block;
+    position:relative;
+    width:-webkit-fill-available;
+    padding:15px 10px;
+    background-color:white;
+}
+#FieldsAdded span 
+{
+    display:inline-block;
+    position:relative;
+    padding:3px 6px;
+    transition:0.3s ease;
+    margin:2px;
+    border-radius:20px;
+    font-size:8px;
+    letter-spacing: 0.5px;
+    font-weight:400;
+    user-select:none;
+    cursor:pointer;
+}
+#FieldsAdded span b 
+{
+    background-color:transparent;
+}
+#FieldsAdded span:hover,#FieldsAdded span:focus 
+{
+    background-color:#E8DAEF;
+}
+#FieldsAdded span>b 
+{
+    margin:0px 3px;
+}
+#FieldsAdded span .fa 
+{
+    display:inline-block;
+    position:relative;
+    padding:4px;
+    cursor:pointer;
+    user-select: none;
+    border-radius:100px;
+    transition:0.3s ease;
+    z-index: 2;
+}
+#FieldsAdded span .fa:hover
+{
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+}
+#FieldsAdded .user
+{
+    display:inline-block;
+    position:absolute;
+    padding:5px 10px;
+    top:-10px;
+    left:50%;
+    transform:translate(-50%,-50%);
+    transition:0.3s ease;
+    border-radius:10px 10px 0px 0px;
+    font-size:10px;
+    letter-spacing:0.3px;
+    width:fit-content;
+    background-color:white;
+}
+#FieldsAdded .user b 
+{
+    background-color:white;
+}
+.CreatedForms
+{
+    display:block;
+    position:relative;
+    margin:0px auto;
+    padding:20px;
+    transition:0.3s ease;
+    width:90%;
+}
